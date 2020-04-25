@@ -76,7 +76,7 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                 ]),
-                SizedBox(height: 15),
+            SizedBox(height: 15),
             Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,9 +122,12 @@ class _LandingPageState extends State<LandingPage> {
       )),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xff375079),
-        child: IconButton(icon: Icon(Icons.arrow_forward, color: Colors.white), onPressed: null),
+        child: IconButton(
+            icon: Icon(Icons.arrow_forward, color: Colors.white),
+            onPressed: null),
         onPressed: () {
-          Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context){
+          Navigator.of(context).pushReplacement(
+              new MaterialPageRoute(builder: (BuildContext context) {
             return DetectScreen(title: 'ASL Detection');
           }));
         },

@@ -6,6 +6,7 @@ import 'package:asl/helpers/app_helper.dart';
 import 'package:asl/helpers/camera_helper.dart';
 import 'package:asl/helpers/tflite_helper.dart';
 import 'package:asl/models/result.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class DetectScreen extends StatefulWidget {
   DetectScreen({Key key, this.title}) : super(key: key);
@@ -15,9 +16,11 @@ class DetectScreen extends StatefulWidget {
   _DetectScreenState createState() => _DetectScreenState();
 }
 
-class _DetectScreenState extends State<DetectScreen> with TickerProviderStateMixin{
+class _DetectScreenState extends State<DetectScreen>
+    with TickerProviderStateMixin {
   AnimationController _colorAnimController;
   Animation _colorTween;
+  final FlutterTts flutterTts = FlutterTts();
 
   List<Result> outputs;
 
@@ -38,25 +41,26 @@ class _DetectScreenState extends State<DetectScreen> with TickerProviderStateMix
     _setupAnimation();
 
     //Subscribe to TFLite's Classify events
-    TFLiteHelper.tfLiteResultsController.stream.listen((value) {
-      value.forEach((element) {
-        _colorAnimController.animateTo(element.confidence,
-            curve: Curves.bounceIn, duration: Duration(milliseconds: 500));
-      });
+    TFLiteHelper.tfLiteResultsController.stream.listen(
+        (value) {
+          value.forEach((element) {
+            _colorAnimController.animateTo(element.confidence,
+                curve: Curves.bounceIn, duration: Duration(milliseconds: 500));
+          });
 
-      //Set Results
-      outputs = value;
+          //Set Results
+          outputs = value;
 
-      //Update results on screen
-      setState(() {
-        //Set bit to false to allow detection again
-        CameraHelper.isDetecting = false;
-      });
-    }, onDone: () {
-
-    }, onError: (error) {
-      AppHelper.log("listen", error);
-    });
+          //Update results on screen
+          setState(() {
+            //Set bit to false to allow detection again
+            CameraHelper.isDetecting = false;
+          });
+        },
+        onDone: () {},
+        onError: (error) {
+          AppHelper.log("listen", error);
+        });
   }
 
   @override
@@ -95,6 +99,13 @@ class _DetectScreenState extends State<DetectScreen> with TickerProviderStateMix
   }
 
   Widget _buildResultsWidget(double width, List<Result> outputs) {
+    Future speak(String s) async {
+      await flutterTts.setLanguage("en-US");
+      await flutterTts.setPitch(1);
+      await flutterTts.setSpeechRate(0.5);
+      await flutterTts.speak(s);
+    }
+
     return Positioned.fill(
       child: Align(
         alignment: Alignment.bottomCenter,
@@ -130,6 +141,18 @@ class _DetectScreenState extends State<DetectScreen> with TickerProviderStateMix
                           style: TextStyle(
                             color: _colorTween.value,
                             fontSize: 16.0,
+                          ),
+                        ),
+                        Center(
+                          child: FlatButton(
+                            onPressed: () {
+                              speak("${outputs[index].label}");
+                            },
+                            child: Icon(
+                              Icons.play_arrow,
+                              size: 60,
+                              color: Color(0xff375079),
+                            ),
                           ),
                         ),
                       ],

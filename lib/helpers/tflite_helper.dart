@@ -27,7 +27,7 @@ class TFLiteHelper {
             bytesList: image.planes.map((plane) {
               return plane.bytes;
             }).toList(),
-            numResults: 5)
+            numResults: 1) //5
         .then((value) {
       if (value.isNotEmpty) {
         AppHelper.log("classifyImage", "Results loaded. ${value.length}");
