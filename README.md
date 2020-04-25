@@ -12,5 +12,5 @@ An app to detect American Signal Language by taking input from the user, either 
 
 ### Technologies used in this project
 
-- Flutter
-- Tensorflow
+- **Flutter**
+- **Tensorflow**
