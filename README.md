@@ -1,6 +1,6 @@
-# asl
+# American Sign Language Detection
 
-A new Flutter project.
+A _realtime image detection_ app which helps to detect *American Sign Language*.
 
 ## Getting Started
 
