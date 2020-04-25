@@ -17,4 +17,4 @@ An app to detect American Signal Language by taking input from the user, either 
 
 ### Plugins used in this project
 
-[> tflite : (https://img.shields.io/badge/tflite-1.0.5-orange)]
+> tflite : [(https://img.shields.io/badge/tflite-1.0.5-orange)]
