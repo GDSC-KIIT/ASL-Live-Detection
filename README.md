@@ -1,6 +1,6 @@
 # American Sign Language Detection
 
-A _realtime image detection_ app which helps to detect *American Sign Language*.
+A _realtime image detection_ app which helps to detect **American Sign Language**.
 
 ## Getting Started
 
