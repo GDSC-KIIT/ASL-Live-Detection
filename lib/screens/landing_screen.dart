@@ -10,10 +10,6 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   elevation: 0.0,
-      // ),
       backgroundColor: Colors.white,
       body: Container(
           child: Padding(
@@ -57,7 +53,7 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             SizedBox(
-              height: (MediaQuery.of(context).size.height * 0.25),
+              height: (MediaQuery.of(context).size.height * 0.20),
             ),
             Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -80,7 +76,29 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                 ]),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.28),
+                SizedBox(height: 15),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Icon(
+                    Icons.volume_up,
+                    color: Color(0xff3ACCE1),
+                    size: 30,
+                  ),
+                  SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Converts texts to speech\nwith a tap.",
+                      style: TextStyle(
+                          color: Color(0xff41A1FF),
+                          fontSize: 15,
+                          fontFamily: "Roboto"),
+                    ),
+                  ),
+                ]),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.21),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
