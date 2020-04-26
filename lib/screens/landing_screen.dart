@@ -98,7 +98,7 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                 ]),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.21),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.27),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
