@@ -17,8 +17,14 @@ An app to detect American Signal Language by taking input from the user, either 
 
 ### Plugins used in this project
 
-> **tflite**: ^1.0.5
-> **camera**: ^0.5.7+4
-> **percent_indicator**: ^2.1.3
-> **animated_splash**: ^1.0.0
-> **flutter_launcher_icons**: ^0.7.5
+- **tflite**: ^1.0.5
+- **camera**: ^0.5.7+4
+- **percent_indicator**: ^2.1.3
+- **animated_splash**: ^1.0.0
+- **flutter_launcher_icons**: ^0.7.5
+
+### Screenshots
+![screenshot 1](/Screenshots/HomePage.jpg)
+![screenshot 2](/Screenshots/B.jpg)
+![screenshot 2](/Screenshots/C.jpg)
+![screenshot 2](/Screenshots/D.jpg)
