@@ -25,8 +25,8 @@ An app to detect American Signal Language by taking input from the user, either 
 
 ### How to run this app
 
- > flutter pub get
- > flutter run
+- **flutter pub get**
+- **flutter run**
 
 ### Screenshots
 ![screenshot 1](/Screenshots/HomePage.jpg)
