@@ -23,6 +23,11 @@ An app to detect American Signal Language by taking input from the user, either 
 - **animated_splash**: ^1.0.0
 - **flutter_launcher_icons**: ^0.7.5
 
+### How to run this app
+
+ > flutter pub get
+ > flutter run
+
 ### Screenshots
 ![screenshot 1](/Screenshots/HomePage.jpg)
 ![screenshot 2](/Screenshots/B.jpg)
