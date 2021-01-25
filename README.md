@@ -33,3 +33,6 @@ An app to detect American Signal Language by taking input from the user, either 
 ![screenshot 2](/Screenshots/B.jpg)
 ![screenshot 2](/Screenshots/C.jpg)
 ![screenshot 2](/Screenshots/D.jpg)
+
+
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/sayannath)
